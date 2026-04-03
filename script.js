@@ -1,89 +1,42 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffd6ec, #ffeaf6);
-  transition: 0.3s;
+let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+function renderNotes() {
+  let container = document.getElementById("notesContainer");
+  container.innerHTML = "";
+
+  notes.forEach((n, i) => {
+    let div = document.createElement("div");
+    div.className = "note";
+
+    div.innerHTML = `
+      ${n}
+      <button class="deleteBtn" onclick="deleteNote(${i})">✖</button>
+    `;
+
+    container.appendChild(div);
+  });
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
+function addNote() {
+  let input = document.getElementById("noteInput");
+
+  if (input.value === "") return;
+
+  notes.push(input.value);
+  localStorage.setItem("notes", JSON.stringify(notes));
+
+  input.value = "";
+  renderNotes();
 }
 
-.topbar button {
-  border: none;
-  border-radius: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
+function deleteNote(i) {
+  notes.splice(i, 1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  renderNotes();
 }
 
-.container {
-  text-align: center;
-  margin-top: 20px;
+function toggleMode() {
+  document.body.classList.toggle("dark");
 }
 
-textarea {
-  width: 300px;
-  height: 100px;
-  border-radius: 15px;
-  border: none;
-  padding: 10px;
-  outline: none;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  background: #ff7eb3;
-  color: white;
-  cursor: pointer;
-}
-
-#notesContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.note {
-  background: white;
-  margin: 15px;
-  padding: 15px;
-  width: 250px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  position: relative;
-  animation: fadeIn 0.4s ease;
-}
-
-.deleteBtn {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  background: #ff4d6d;
-  border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-}
-
-/* DARK MODE */
-.dark {
-  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
-  color: white;
-}
-
-.dark .note {
-  background: #333;
-  color: white;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
+renderNotes();
