@@ -40,3 +40,7 @@ function toggleMode() {
 }
 
 renderNotes();
+function enterApp() {
+  document.getElementById("welcomeScreen").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
