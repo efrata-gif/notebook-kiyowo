@@ -40,8 +40,15 @@ function toggleMode() {
 }
 
 function enterApp() {
-  document.getElementById("welcomeScreen").style.display = "none";
-  document.getElementById("app").style.display = "block";
+  let welcome = document.getElementById("welcomeScreen");
+  let app = document.getElementById("app");
+
+  welcome.style.opacity = "0";
+
+  setTimeout(() => {
+    welcome.style.display = "none";
+    app.style.display = "block";
+  }, 300);
 }
 
 renderNotes();
