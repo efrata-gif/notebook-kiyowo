@@ -27,7 +27,7 @@ body {
 }
 /* RESPONSIVE HP */
 @media (max-width: 600px) {
-  .container button {
+  button {
     width: 90%;
   }
 }
