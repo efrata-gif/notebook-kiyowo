@@ -39,12 +39,9 @@ function toggleMode() {
   document.body.classList.toggle("dark");
 }
 
+function enterApp() {
+  document.getElementById("welcomeScreen").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
+
 renderNotes();
-function enterApp() {
-  document.getElementById("welcomeScreen").style.display = "none";
-  document.getElementById("app").style.display = "block";
-}
-function enterApp() {
-  document.getElementById("welcomeScreen").style.display = "none";
-  document.getElementById("app").style.display = "block";
-}
