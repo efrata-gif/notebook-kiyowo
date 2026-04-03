@@ -50,5 +50,4 @@ function enterApp() {
     app.style.display = "block";
   }, 300);
 }
-
 renderNotes();
