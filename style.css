@@ -102,3 +102,33 @@ button {
   from {opacity: 0; transform: translateY(10px);}
   to {opacity: 1; transform: translateY(0);}
 }
+/* TRANSISI GLOBAL */
+* {
+  transition: all 0.3s ease;
+}
+
+/* ANIMASI MASUK APP */
+#app {
+  animation: fadeSlide 0.5s ease;
+}
+
+/* KEYFRAME */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HOVER EFFECT BIAR HIDUP */
+button:hover {
+  transform: scale(1.05);
+}
+
+.note:hover {
+  transform: translateY(-5px);
+}
