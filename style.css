@@ -5,6 +5,17 @@ body {
   transition: 0.3s;
 }
 
+/* WELCOME CENTER */
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* TOPBAR */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -20,6 +31,7 @@ body {
   cursor: pointer;
 }
 
+/* INPUT */
 .container {
   text-align: center;
   margin-top: 20px;
@@ -34,6 +46,7 @@ textarea {
   outline: none;
 }
 
+/* BUTTON */
 button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -44,6 +57,7 @@ button {
   cursor: pointer;
 }
 
+/* NOTES */
 #notesContainer {
   display: flex;
   flex-wrap: wrap;
@@ -83,14 +97,8 @@ button {
   color: white;
 }
 
+/* ANIMATION */
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(10px);}
   to {opacity: 1; transform: translateY(0);}
-}
-.center {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
