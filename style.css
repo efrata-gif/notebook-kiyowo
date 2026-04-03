@@ -1,89 +1,36 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffd6ec, #ffeaf6);
-  transition: 0.3s;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Notebook Kiyowo ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-}
+<!-- HALAMAN AWAL -->
+<div id="welcomeScreen" class="center">
+  <h1>✨ Welcome ✨</h1>
+  <p>Notebook kiyowo kamu 💖</p>
+  <button onclick="enterApp()">Masuk 💕</button>
+</div>
 
-.topbar button {
-  border: none;
-  border-radius: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
+<!-- HALAMAN NOTES -->
+<div id="app" style="display:none;">
 
-.container {
-  text-align: center;
-  margin-top: 20px;
-}
+  <div class="topbar">
+    <h1>📓 Notebook</h1>
+    <button onclick="toggleMode()">🌙</button>
+  </div>
 
-textarea {
-  width: 300px;
-  height: 100px;
-  border-radius: 15px;
-  border: none;
-  padding: 10px;
-  outline: none;
-}
+  <div class="container">
+    <textarea id="noteInput" placeholder="Tulis pikiran kamu... 💭"></textarea>
+    <button onclick="addNote()">Tambah ✨</button>
+  </div>
 
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  background: #ff7eb3;
-  color: white;
-  cursor: pointer;
-}
+  <div id="notesContainer"></div>
 
-#notesContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+</div>
 
-.note {
-  background: white;
-  margin: 15px;
-  padding: 15px;
-  width: 250px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  position: relative;
-  animation: fadeIn 0.4s ease;
-}
-
-.deleteBtn {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  background: #ff4d6d;
-  border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-}
-
-/* DARK MODE */
-.dark {
-  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
-  color: white;
-}
-
-.dark .note {
-  background: #333;
-  color: white;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
+<script src="script.js"></script>
+</body>
+</html>
