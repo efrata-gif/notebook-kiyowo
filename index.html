@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Notebook Kiyowo 💖</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Notebook Kiyowo ✨</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>📓 Notebook Kiyowo 💖</h1>
+<div class="topbar">
+  <h1>📓 Notebook</h1>
+  <button onclick="toggleMode()">🌙</button>
+</div>
 
 <div class="container">
-    <textarea id="noteInput" placeholder="Tulis sesuatu yang gemes... ✨"></textarea>
-    <br>
-    <button onclick="addNote()">Tambah 💕</button>
+  <textarea id="noteInput" placeholder="Tulis pikiran kamu... 💭"></textarea>
+  <button onclick="addNote()">Tambah ✨</button>
 </div>
 
 <div id="notesContainer"></div>
