@@ -1,11 +1,11 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffd6ec, #ffeaf6);
-  transition: 0.3s;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  transition: 0.4s;
 }
 
-/* WELCOME CENTER */
+/* WELCOME */
 .center {
   height: 100vh;
   display: flex;
@@ -15,23 +15,18 @@ body {
   text-align: center;
 }
 
-/* TOPBAR */
+/* GLASS EFFECT */
 .topbar {
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
+  margin: 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(15px);
 }
 
-.topbar button {
-  border: none;
-  border-radius: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-/* INPUT */
+/* INPUT AREA */
 .container {
   text-align: center;
   margin-top: 20px;
@@ -40,80 +35,78 @@ body {
 textarea {
   width: 300px;
   height: 100px;
-  border-radius: 15px;
+  border-radius: 20px;
   border: none;
-  padding: 10px;
+  padding: 15px;
   outline: none;
+  background: rgba(255,255,255,0.7);
 }
 
 /* BUTTON */
 button {
   margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 10px 25px;
+  border-radius: 25px;
   border: none;
-  background: #ff7eb3;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
   color: white;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* NOTES */
+button:hover {
+  transform: scale(1.05);
+}
+
+/* NOTES GRID */
 #notesContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* NOTE CARD */
 .note {
-  background: white;
+  background: rgba(255,255,255,0.8);
   margin: 15px;
   padding: 15px;
   width: 250px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   position: relative;
-  animation: fadeIn 0.4s ease;
+  animation: fadeUp 0.4s ease;
+  transition: 0.3s;
 }
 
+.note:hover {
+  transform: translateY(-5px);
+}
+
+/* DELETE */
 .deleteBtn {
   position: absolute;
   top: 8px;
   right: 10px;
   background: #ff4d6d;
-  border: none;
   border-radius: 50%;
+  border: none;
   color: white;
   cursor: pointer;
 }
 
 /* DARK MODE */
 .dark {
-  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
   color: white;
 }
 
 .dark .note {
-  background: #333;
-  color: white;
+  background: rgba(50,50,70,0.9);
 }
 
 /* ANIMATION */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-/* TRANSISI GLOBAL */
-* {
-  transition: all 0.3s ease;
-}
-
-/* ANIMASI MASUK APP */
-#app {
-  animation: fadeSlide 0.5s ease;
-}
-
-/* KEYFRAME */
-@keyframes fadeSlide {
+@keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -122,13 +115,4 @@ button {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* HOVER EFFECT BIAR HIDUP */
-button:hover {
-  transform: scale(1.05);
-}
-
-.note:hover {
-  transform: translateY(-5px);
 }
