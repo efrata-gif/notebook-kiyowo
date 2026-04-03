@@ -25,7 +25,24 @@ body {
   background: rgba(255,255,255,0.3);
   backdrop-filter: blur(15px);
 }
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+  textarea {
+    width: 90%;
+  }
 
+  .note {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  button {
+    width: 90%;
+  }
+}
 /* INPUT AREA */
 .container {
   text-align: center;
