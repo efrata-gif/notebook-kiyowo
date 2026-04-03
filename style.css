@@ -1,11 +1,11 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
-  transition: 0.4s;
+  background: linear-gradient(135deg, #ffd6ec, #ffeaf6);
+  transition: 0.3s;
 }
 
-/* WELCOME */
+/* WELCOME CENTER */
 .center {
   height: 100vh;
   display: flex;
@@ -15,36 +15,23 @@ body {
   text-align: center;
 }
 
-/* GLASS EFFECT */
+/* TOPBAR */
 .topbar {
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
-  margin: 10px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(15px);
-}
-/* RESPONSIVE HP */
-@media (max-width: 600px) {
-  button {
-    width: 90%;
-  }
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
 }
 
-  .note {
-    width: 90%;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  button {
-    width: 90%;
-  }
+.topbar button {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
-/* INPUT AREA */
+
+/* INPUT */
 .container {
   text-align: center;
   margin-top: 20px;
@@ -53,78 +40,80 @@ body {
 textarea {
   width: 300px;
   height: 100px;
-  border-radius: 20px;
+  border-radius: 15px;
   border: none;
-  padding: 15px;
+  padding: 10px;
   outline: none;
-  background: rgba(255,255,255,0.7);
 }
 
 /* BUTTON */
 button {
   margin-top: 10px;
-  padding: 10px 25px;
-  border-radius: 25px;
+  padding: 10px 20px;
+  border-radius: 20px;
   border: none;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  background: #ff7eb3;
   color: white;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
-/* NOTES GRID */
+/* NOTES */
 #notesContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* NOTE CARD */
 .note {
-  background: rgba(255,255,255,0.8);
+  background: white;
   margin: 15px;
   padding: 15px;
   width: 250px;
   border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   position: relative;
-  animation: fadeUp 0.4s ease;
-  transition: 0.3s;
+  animation: fadeIn 0.4s ease;
 }
 
-.note:hover {
-  transform: translateY(-5px);
-}
-
-/* DELETE */
 .deleteBtn {
   position: absolute;
   top: 8px;
   right: 10px;
   background: #ff4d6d;
-  border-radius: 50%;
   border: none;
+  border-radius: 50%;
   color: white;
   cursor: pointer;
 }
 
 /* DARK MODE */
 .dark {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
   color: white;
 }
 
 .dark .note {
-  background: rgba(50,50,70,0.9);
+  background: #333;
+  color: white;
 }
 
 /* ANIMATION */
-@keyframes fadeUp {
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+/* TRANSISI GLOBAL */
+* {
+  transition: all 0.3s ease;
+}
+
+/* ANIMASI MASUK APP */
+#app {
+  animation: fadeSlide 0.5s ease;
+}
+
+/* KEYFRAME */
+@keyframes fadeSlide {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -134,8 +123,12 @@ button:hover {
     transform: translateY(0);
   }
 }
-button {
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: pink;
+
+/* HOVER EFFECT BIAR HIDUP */
+button:hover {
+  transform: scale(1.05);
+}
+
+.note:hover {
+  transform: translateY(-5px);
 }
