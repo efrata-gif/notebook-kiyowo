@@ -139,3 +139,7 @@ button {
   border-radius: 20px;
   background: pink;
 }
+.modeBtn {
+  width: auto;
+  padding: 5px 10px;
+}
