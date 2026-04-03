@@ -116,3 +116,21 @@ button:hover {
     transform: translateY(0);
   }
 }
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+  textarea {
+    width: 90%;
+  }
+
+  .note {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  button {
+    width: 90%;
+  }
+}
