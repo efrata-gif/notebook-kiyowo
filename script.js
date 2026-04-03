@@ -51,3 +51,8 @@ function enterApp() {
   }, 300);
 }
 renderNotes();
+document.body.style.opacity = "0";
+
+window.onload = () => {
+  document.body.style.opacity = "1";
+};
