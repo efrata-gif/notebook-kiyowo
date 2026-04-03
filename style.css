@@ -135,6 +135,12 @@ button:hover {
   }
 }
 .modeBtn {
-  width: auto;
-  padding: 5px 10px;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  font-size: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
