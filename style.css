@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(to bottom, #ffd6eb, #ffe6f5);
+    font-family: "Comic Sans MS", cursive;
+    text-align: center;
+}
+
+h1 {
+    color: #ff4da6;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+    border-radius: 15px;
+    border: 2px solid #ff99cc;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff80bf;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff4da6;
+}
+
+.note {
+    background: white;
+    margin: 15px auto;
+    padding: 15px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    animation: muncul 0.3s ease;
+}
+
+.deleteBtn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: red;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes muncul {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
