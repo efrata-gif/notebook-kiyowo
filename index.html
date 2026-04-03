@@ -7,17 +7,29 @@
 </head>
 <body>
 
-<div class="topbar">
-  <h1>📓 Notebook</h1>
-  <button onclick="toggleMode()">🌙</button>
+<!-- HALAMAN AWAL -->
+<div id="welcomeScreen" class="center">
+  <h1>✨ Welcome ✨</h1>
+  <p>Notebook kiyowo kamu 💖</p>
+  <button onclick="enterApp()">Masuk 💕</button>
 </div>
 
-<div class="container">
-  <textarea id="noteInput" placeholder="Tulis pikiran kamu... 💭"></textarea>
-  <button onclick="addNote()">Tambah ✨</button>
-</div>
+<!-- HALAMAN NOTES -->
+<div id="app" style="display:none;">
 
-<div id="notesContainer"></div>
+  <div class="topbar">
+    <h1>📓 Notebook</h1>
+    <button onclick="toggleMode()">🌙</button>
+  </div>
+
+  <div class="container">
+    <textarea id="noteInput" placeholder="Tulis pikiran kamu... 💭"></textarea>
+    <button onclick="addNote()">Tambah ✨</button>
+  </div>
+
+  <div id="notesContainer"></div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
